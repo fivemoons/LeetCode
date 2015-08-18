@@ -1,6 +1,6 @@
 package leetcode;
 
-public class Q3_lengthOfLongestSubstring {
+public class Q3_LengthOfLongestSubstring {
 	public static int lengthOfLongestSubstring(String s){
 		boolean[] sign = new boolean[128];
 		int begin = 0;
