@@ -5,7 +5,7 @@ public class Q7_ReverseInteger {
 		try {
 			if(x==Integer.MIN_VALUE) throw new Exception();
 			if(x<0) return -reverse(-x);
-			return Integer.parseInt(new StringBuilder(String.valueOf(x)).reverse().toString());
+			return Integer.parseInt(new StringBuffer(String.valueOf(x)).reverse().toString());
 		} catch (Exception e) {
 			return 0;
 		}
