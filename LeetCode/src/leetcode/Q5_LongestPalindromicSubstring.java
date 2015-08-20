@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 public class Q5_LongestPalindromicSubstring {
 	
 	public static String change(String s){
