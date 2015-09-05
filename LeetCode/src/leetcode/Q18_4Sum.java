@@ -37,7 +37,7 @@ public class Q18_4Sum {
         	}
         }
         //为了输出map
-        /*
+        ///*
         Set<Entry<Integer,List<Integer[]>>> set =  map.entrySet(); //entrySet函数返回map的每一个entry生成一个set，此外还有keyset和valueset
         for(Entry<Integer,List<Integer[]>> entry : set){//增强for循环
         	System.out.print(entry.getKey() + ":");
@@ -46,7 +46,7 @@ public class Q18_4Sum {
         	}
         	System.out.println();
         }
-        */
+        //*/
         //两个2sum
         
         
