@@ -18,7 +18,7 @@ public class Q1_TwoSum {
 	}
 
 	public static void main(String[] args) {
-		int[] test = { -3, 4, 3, 90 };
+		int[] test = { 0, 4, 3, 3,3,0,90 };
 		int target = 0;
 		int[] result = new int[] {};
 		result = twoSum(test, target);
