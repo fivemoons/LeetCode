@@ -15,9 +15,8 @@ public class Q28_StrStr {//找子串 最普通的方法。。。
 				k++; //真后缀加1
 				next[j] =  k; //当前j的next设为k
 			}
-			else{
+			else
 				k = next[k]; //没有匹配到，k退回到前一个真后缀，然后
-			}
 		}
 		return next;
 	}
@@ -47,23 +46,19 @@ public class Q28_StrStr {//找子串 最普通的方法。。。
 	public static int KMP(String haystack, String needle){
 		if ("".equals(needle)) return 0;
 		int[] next = getNext(needle);
-		for (int i=0; i< next.length; i++){
-			System.out.print(next[i] + "_");
-		}
-		System.out.println();
-		int k = 0;
+		int i = 0;
 		int j = 0;
-		while ((k<haystack.length())&&(j < needle.length())){
-			if ((j == -1)||(haystack.charAt(k) == needle.charAt(j))){
-				k++;
+		while ((i<haystack.length())&&(j < needle.length())){
+			if ((j == -1)||(haystack.charAt(i) == needle.charAt(j))){//如果已经无路可退或者匹配上了
+				i++;
 				j++;
 			}
 			else{
-				j = next[j];
+				j = next[j]; //j往后退一个
 			}
 		}
 		if (j == needle.length())
-			return k - j;
+			return i - j;
 		else
 			return -1;
 	}
