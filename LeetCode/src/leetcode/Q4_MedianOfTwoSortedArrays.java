@@ -32,9 +32,9 @@ public class Q4_MedianOfTwoSortedArrays {
 		}
 	}
 	public static void main(String[] args) {
-		int[] nums1 = new int[]{0,2,4,6,8};
-		int[] nums2 = new int[]{1,3,5,7,9};
-		System.out.println(find(nums1,nums2,4));
+		int[] nums1 = new int[]{4,6};
+		int[] nums2 = new int[]{1,2,3,5,7};
+		System.out.println(find(nums1,nums2,2));
 		//System.out.println(findMedianSortedArrays(nums1,nums2));
 	}
 }
