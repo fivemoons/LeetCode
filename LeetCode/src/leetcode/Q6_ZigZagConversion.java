@@ -21,7 +21,7 @@ public class Q6_ZigZagConversion {
         return ss;
     }
 	public static void main(String[] args) {
-		String s = "0";
-		System.out.println(convert(s,1));
+		String s = "0123456789";
+		System.out.println(convert(s,3));
 	}
 }
