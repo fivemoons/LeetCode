@@ -19,12 +19,12 @@ public class Q36_ValidSudoku {
 	public static boolean isValidSudoku(char[][] board) {
         boolean ans = true;
         for(int i=0; i<=8; i++){
-        	ans &= isOk(i,i,0,8,board);
-        	ans &= isOk(0,8,i,i,board);
+        	ans &= isOk(i,i,0,8,board); //一横行
+        	ans &= isOk(0,8,i,i,board); //一竖行
         }
         for(int i=0; i<=2; i++){
         	for(int j=0; j<=2; j++){
-        		ans &= isOk(3*i,3*i+2,3*j,3*j+2,board);
+        		ans &= isOk(3*i,3*i+2,3*j,3*j+2,board); //每一个九宫格
         	}
         }
         return ans;
