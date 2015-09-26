@@ -27,7 +27,7 @@ public class Q39_CombinationSum {//输入无序，数组中没有重复的数，
 	
 	public static void main(String[] args) {
 		Q39_CombinationSum q = new Q39_CombinationSum();
-		List<List<Integer>> temp = q.combinationSum(new int[]{1},1);
+		List<List<Integer>> temp = q.combinationSum(new int[]{10,1,2,7,6,5},8);
 		for (List<Integer> t1 : temp){
 			for(Integer t2 : t1){
 				System.out.print(t2+"_");
