@@ -21,6 +21,6 @@ public class Q10_RegulaeExpression {
 		}
     }
 	public static void main(String[] args) {
-		System.out.println(isMatch("aab","c*a*b"));
+		System.out.println(isMatch("aab",".*"));
 	}
 }
