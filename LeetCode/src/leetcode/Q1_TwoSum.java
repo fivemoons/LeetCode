@@ -19,7 +19,7 @@ public class Q1_TwoSum {
 
 	public static void main(String[] args) {
 		int[] test = { 0, 4, 3, 3,3,0,90 };
-		int target = 0;
+		int target = 6;
 		int[] result = new int[] {};
 		result = twoSum(test, target);
 		System.out.println(result[0] + "," + result[1]);
