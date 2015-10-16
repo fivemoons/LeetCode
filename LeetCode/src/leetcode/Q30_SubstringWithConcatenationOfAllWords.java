@@ -21,7 +21,7 @@ public class Q30_SubstringWithConcatenationOfAllWords {
 		mapclone.putAll(map); //putall函数可以实现深拷贝
 
 		int len = words[0].length(); //每一个words的长度
-		for (int i = 0; i <= s.length() - len * words.length; i++) { //注意长度上届
+		for (int i = 0; i <= s.length() - len * words.length; i++) { //注意长度上界
 			String subs = s.substring(i, i + len); //第一个子串
 			int count = 0; //用于计数，看是否已经满足条件
 			int from = i; //头指针
