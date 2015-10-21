@@ -63,7 +63,7 @@ public class Q28_StrStr {//找子串 最普通的方法。。。
 			return -1;
 	}
 	public static void main(String[] args) {
-		System.out.println(KMP("",""));
+		System.out.println(KMP("123",""));
 	}
 
 }

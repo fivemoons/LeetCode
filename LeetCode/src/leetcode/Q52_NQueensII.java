@@ -1,6 +1,6 @@
 package leetcode;
 
-public class Q52_NQueenII {//位运算优化版本，只计算答案数
+public class Q52_NQueensII {//位运算优化版本，只计算答案数
 	private static int ans = 0; //用来计算答案数
 
 	private static void dfs(int all, int col, int ld, int rd) { //依次为n位全是1，列数，右上左下对角线，左上右下对角线被占情况
@@ -22,7 +22,7 @@ public class Q52_NQueenII {//位运算优化版本，只计算答案数
 	}
 
 	public static void main(String[] args) {
-		System.out.println(totalNQueens(8));
+		System.out.println(totalNQueens(4));
 	}
 
 }
