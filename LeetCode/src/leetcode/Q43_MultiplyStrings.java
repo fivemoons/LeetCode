@@ -28,7 +28,7 @@ public class Q43_MultiplyStrings {
     	return ans;
     }
 	public static void main(String[] args) {
-		System.out.println(multiply2("9133","0"));
+		System.out.println(multiply2("9133",""));
 	}
 
 }
