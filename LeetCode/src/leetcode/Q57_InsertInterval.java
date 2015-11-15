@@ -17,7 +17,7 @@ public class Q57_InsertInterval {
     			return intervals;
 		}
 		ListIterator<Interval> it = intervals.listIterator();
-		while(it.hasNext()){
+		while(it.hasNext()){ //下一个 下一个 下一个  然后卡在中间：第一种情况，退出  有重叠：第二种情况  下一个 下一个 下一个 add
 			Interval now = it.next(); //返回it后面的元素，并且后移一位
 			if (newInterval.end < now.start){ //如果新区间正好卡在两个区间中间
 				it.previous(); //返回前一个区间
