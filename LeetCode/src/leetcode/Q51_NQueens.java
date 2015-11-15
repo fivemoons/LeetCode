@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Q51_NQueens {
-	private static boolean isOK(int[] cur, int row, int n){
+	private static boolean isOK(int[] cur, int row){
 		for(int i=0; i<row; i++){
 			if(cur[i] == cur[row]) return false; //是否有相同列
 			if(cur[i]-i == cur[row]-row) return false;//是否有相同左上右下对角线
@@ -26,7 +26,7 @@ public class Q51_NQueens {
     	}else{
     		for(int i=0; i<n; i++){//依次遍历这一行的每一个位置
     			cur[row] = i;//将当前位置放上皇后
-    			if(isOK(cur,row,n)){//判断row行的皇后能否满足条件
+    			if(isOK(cur,row)){//判断row行的皇后能否满足条件
     				dfs(ans,cur,row + 1,n);//满足条件则继续递归下一行
     			}
     		}
