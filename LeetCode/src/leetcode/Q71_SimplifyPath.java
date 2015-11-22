@@ -26,7 +26,7 @@ public class Q71_SimplifyPath {
 		return ans;
     }
 	public static void main(String[] args) {
-		System.out.println(simplifyPath("/.."));
+		System.out.println(simplifyPath("/abc/.../."));
 	}
 
 }
