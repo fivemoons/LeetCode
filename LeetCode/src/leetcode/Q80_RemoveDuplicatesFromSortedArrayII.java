@@ -1,6 +1,6 @@
 package leetcode;
 
-public class Q80_RemoveDuplicatesfromSortedArrayII {
+public class Q80_RemoveDuplicatesFromSortedArrayII {
     public static int removeDuplicates(int[] nums) {
     	boolean[] bool = new boolean[nums.length]; //是否是要返回的数
         for(int i=0; i<nums.length; i++){
