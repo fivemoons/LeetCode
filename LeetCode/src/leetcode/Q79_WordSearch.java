@@ -1,6 +1,6 @@
 package leetcode;
 
-public class Q78_WordSearch {
+public class Q79_WordSearch {
 	private static void copy(boolean[][] b1,boolean[][] b2){ //注意：拷贝二维数组，clone()和Arrays.fill()均不可以
 		for(int i=0; i<b1.length; i++){
 			for(int j=0; j<b1[0].length; j++){
