@@ -1,7 +1,44 @@
-package leetcode;
+package Utils;
 
-public class Q215_KthLargestElementInAnArray {//快速选择，两个方法
-	//选择首元素作为监督哨
+public class QuickSort {
+	/*
+	 * 快排，递归，选择第一个元素当做指针
+	 */
+	public static void quickSort0(int[] nums, int l, int r){
+        int i=l, j=r;
+        int x = nums[i];
+        while(i<j){
+        	while(i<j && x<nums[j]) j--;
+        	nums[i] = nums[j];
+        	while(i<j && nums[i]<=x) i++;
+        	nums[j] = nums[i];
+        }
+        nums[i] = x;
+        if(l<i) quickSort0(nums,l,i-1);
+        if(i<r) quickSort0(nums,i+1,r);
+    }
+	/*
+	 * 快排，递归，选择中间的元素当做指针   面试版~~~~
+	 */
+	public static void quickSort1(int[] nums, int l, int r){
+		int i=l, j=r; //左右指针
+		int x = nums[(i+j)>>1]; //选择监督哨
+		while(i<j){
+			while(nums[i] < x) i++;
+			while(x < nums[j]) j--;
+			if(i<=j){
+				int t = nums[i]; nums[i] = nums[j]; nums[j] = t;
+				i++;
+				j--;
+			}
+		}
+		if(l<j) quickSort1(nums,l,j);
+		if(i<r) quickSort1(nums,i,r);
+	}
+	
+	/*
+	 * 快速选择：选择首元素作为监督哨
+	 */
     public static int findKthLargest(int[] nums, int k) {
     	k--;
         int l=0, r=nums.length-1;
@@ -24,7 +61,10 @@ public class Q215_KthLargestElementInAnArray {//快速选择，两个方法
         }
         return nums[k];
     }
-    //选择中间元素作为监督哨
+    /*
+     * 快速选择： 选择中间元素作为监督哨
+     */
+
     public static int findKthLargest1(int[] nums, int k){
     	k--;
     	int l=0, r= nums.length - 1;
@@ -47,7 +87,10 @@ public class Q215_KthLargestElementInAnArray {//快速选择，两个方法
     	return nums[k];
     }
     
-    public static int findKthLargest2(int[] nums, int k){ //递归版快速选择
+    /*
+     * 快速选择：递归版快速选择  面试版~~~~
+     */
+    public static int findKthLargest2(int[] nums, int k){
     	return findKthLargest20(nums, k-1, 0, nums.length-1);
     }
     private static int findKthLargest20(int[] nums, int k, int l, int r){
@@ -66,9 +109,21 @@ public class Q215_KthLargestElementInAnArray {//快速选择，两个方法
     	else if ((i<r)&&(i<=k)) return findKthLargest20(nums,k,i,r);
     	else return nums[k];
     }
-    
+	
+	
 	public static void main(String[] args) {
-		System.out.println(findKthLargest2(new int[]{-1,2,0},2));
+		int[] nums = new int[]{6,8,3,6,2,6,4,5,3,2,1,7,3,6};
+		quickSort0(nums,0,13);
+		for(int i:nums){
+			System.out.print(i+"_");
+		}
+		System.out.println();
+		
+		nums = new int[]{2,1};
+		quickSort1(nums,0,1);
+		for(int i:nums){
+			System.out.print(i+"_");
+		}
 	}
 
 }
