@@ -33,8 +33,7 @@ public class Q234_PalindromeLinkedList {
         }
         t1.next = t0;
         mid = t1;
-        
-        //mid是后半部分
+        //mid是后半部分起点
         while(head != null && mid != null){
         		if(head.val != mid.val) return false;
         		head = head.next;
