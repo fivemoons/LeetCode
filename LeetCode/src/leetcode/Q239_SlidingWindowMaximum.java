@@ -6,14 +6,14 @@ import java.util.LinkedList;
 public class Q239_SlidingWindowMaximum {
     public int[] maxSlidingWindow(int[] nums, int k) {
     		if(nums==null || nums.length == 0 || k == 0) return new int[]{};
-        Deque<Integer> q = new LinkedList<Integer>();//q中存放的是在k的范围内的最大值的队列，降序，不会超过k
+        Deque<Integer> q = new LinkedList<Integer>();//q中存放的是在k的范围内的最大值的队列下标，严格降序，不会超过k
         int[] ans = new int[nums.length+1-k]; //答案
-        for(int i=0; i<nums.length; i++){ //一次遍历
+        for(int i=0; i<nums.length; i++){ //依次遍历
         		while(!q.isEmpty() && nums[q.getLast()]<=nums[i]){ //当当前的数比队尾要大，则把队尾依次移除
-        			q.removeLast();
+        			q.removeLast();//等于也移除，因为相同的值，左边的没有右边的意义大
         		}
         		q.addLast(i); //加入队列尾中
-        		if(i-(q.getFirst()-1) > k){ //每加入一个元素，则可能会需要移除一个元素
+        		if(i-(q.getFirst()-1) > k){ //每加入一个元素，则可能会需要移除一个元素，最大值如果超过k范围，移除
         			q.removeFirst();
         		}
         		if (i+1>=k) //满足可以加入到队列中
