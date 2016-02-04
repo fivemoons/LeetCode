@@ -9,7 +9,6 @@ public class Q278_FirstBadVersion {
         int l = 2, r = n;
         while(l<=r){
         		int m = l + (r - l)/2;
-        		System.out.println(m);
         		if(isBadVersion(m) && (!isBadVersion(m-1))) return m;
         		else if(isBadVersion(m) && isBadVersion(m-1)) r = m - 1;
         		else l = m + 1;
