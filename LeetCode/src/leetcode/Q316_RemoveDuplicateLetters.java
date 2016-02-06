@@ -21,11 +21,11 @@ public class Q316_RemoveDuplicateLetters {
         		char c = s.charAt(i);
         		freqs.put(c, freqs.get(c) - 1); //当前字符个数-1
         		if(!instack.contains(c)){ //当前字符不在栈中
-        			instack.add(c); //标记为在栈中
         			while(!q.isEmpty() && q.peek() > c && freqs.get(q.peek()) > 0){//把栈顶大的元素并且多余的都去掉
         				instack.remove(q.pop()); //出栈 标记为不在栈中
         			}
-        			q.push(c); //
+        			q.push(c); //字符入栈
+        			instack.add(c); //标记为在栈中
         		}
         }
         StringBuilder sb = new StringBuilder();
