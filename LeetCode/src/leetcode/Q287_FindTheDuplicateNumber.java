@@ -19,7 +19,6 @@ public class Q287_FindTheDuplicateNumber {
     }
 	public static void main(String[] args) {
 		System.out.println(findDuplicate(new int[]{2,2,2,2,2}));
-		
 	}
 
 }
