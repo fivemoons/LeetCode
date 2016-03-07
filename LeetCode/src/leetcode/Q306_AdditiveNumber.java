@@ -21,7 +21,7 @@ public class Q306_AdditiveNumber {
 		return false; //从来没有跑通过
     }
 	public static void main(String[] args) {
-		System.out.println(isAdditiveNumber("1123582"));
+		System.out.println(isAdditiveNumber("121474836472147483648"));
 
 	}
 

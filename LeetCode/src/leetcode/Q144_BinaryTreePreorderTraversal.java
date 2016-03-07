@@ -13,7 +13,7 @@ public class Q144_BinaryTreePreorderTraversal {
 	}
     public static List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> ans = new ArrayList<Integer>();
-    		Stack<TreeNode> stack = new Stack<TreeNode>();
+    	Stack<TreeNode> stack = new Stack<TreeNode>();
         while((root != null) || (!stack.empty())){
         		if(root!=null){
         			stack.push(root);

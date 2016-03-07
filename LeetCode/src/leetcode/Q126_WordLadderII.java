@@ -21,7 +21,7 @@ public class Q126_WordLadderII {
 		}
 	}
     public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
-    		Queue<String> strQueue = new LinkedList<String>(); //BFS遍历的队列
+    	Queue<String> strQueue = new LinkedList<String>(); //BFS遍历的队列
         Map<String,WordAttr> map = new HashMap<String,WordAttr>(); //用来存放每个word及其step path
         
         strQueue.add(beginWord);//首节点加入到BFS队列中
