@@ -7,7 +7,7 @@ public class Q147_InsertionSortList {
 		ListNode(int x) { val = x; }
 	}
     public static ListNode insertionSortList(ListNode head) {
-    		ListNode ans = new ListNode(-1);
+    	ListNode ans = new ListNode(-1);
         while(head != null){
         		ListNode p = ans;
         		for(p=ans;

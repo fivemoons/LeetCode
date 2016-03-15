@@ -7,12 +7,12 @@ public class Q1_TwoSum {
 	public static int[] twoSum(int[] nums, int target) {
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int i = 0; i < nums.length; i++) {
-			map.put(target - nums[i], i);
+			map.put(target - nums[i], i); //需要找的值->下标
 		}
 		for (int i = 0; i < nums.length; i++) {
 			Integer v = map.get(nums[i]);
-			if (v != null && v != i)
-				return new int[] { i + 1, v + 1 };
+			if (v != null && v != i)//注意 别找到自己
+				return new int[] { i , v  };
 		}
 		return new int[] { 0, 0 };
 	}
