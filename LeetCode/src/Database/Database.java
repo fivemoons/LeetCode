@@ -60,9 +60,9 @@ public class Database {
 	  Q196
 	  delete from Person
 	  	where Id not in
-    	(select id from
-        	(select min(p2.Id) as id from Person p2 group by p2.Email)t
-    	)
+    		(select id from
+        		(select min(p2.Id) as id from Person p2 group by p2.Email)t
+    		)
     
       Q197
       select w1.Id Id
