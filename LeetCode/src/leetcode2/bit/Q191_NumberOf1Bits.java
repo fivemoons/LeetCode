@@ -14,12 +14,13 @@ public class Q191_NumberOf1Bits {
 		while(n!=0){
 			ans++;
 			n = n & (n-1);
+			System.out.println(n);
 		}
 		return ans;
 	}
 	public static void main(String[] args) {
-		System.out.println(hammingWeight(11));
-		System.out.println(hammingWeight2(11));
+		System.out.println(hammingWeight(-1));
+		System.out.println(hammingWeight2(-1));
 	}
 
 }
