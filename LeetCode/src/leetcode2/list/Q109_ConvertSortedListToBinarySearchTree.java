@@ -1,4 +1,4 @@
-package list;
+package leetcode2.list;
 
 public class Q109_ConvertSortedListToBinarySearchTree {
 	static class ListNode {
