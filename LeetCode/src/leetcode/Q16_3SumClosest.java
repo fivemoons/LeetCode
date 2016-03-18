@@ -13,17 +13,13 @@ public class Q16_3SumClosest {
         	int r = nums.length - 1; //2sum的右下标
         	while (l<r){ //左右逼近
         		int sum = nums[i] + nums[l] + nums[r]; //当前的和
+    			if (Math.abs(target-sum) < closest){ //判断是否更优
+    				closest = Math.abs(target - sum);
+    				ans = sum;
+    			}
         		if (sum < target){ //如果和偏小
-        			if (Math.abs(target-sum) < closest){ //判断是否更优
-        				closest = Math.abs(target - sum);
-        				ans = sum;
-        			}
         			l++; //右移左下标
         		}else if (sum > target){ //如果和偏大
-        			if (Math.abs(target-sum) < closest){
-        				closest = Math.abs(target - sum);
-        				ans = sum;
-        			}
         			r--;//左移右下标
         		}else
         			return sum;
