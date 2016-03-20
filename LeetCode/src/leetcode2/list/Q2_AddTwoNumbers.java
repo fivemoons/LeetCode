@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode2.list;
 
 public class Q2_AddTwoNumbers {
 	static class ListNode{
