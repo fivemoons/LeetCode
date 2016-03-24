@@ -26,9 +26,9 @@ public class Q4_MedianOfTwoSortedArrays {
 		if(nums1[m1] == nums2[m2])
 			return nums1[m1]; //直接找到要的值
 		else if(nums1[m1] < nums2[m2]){//删除0-m1这m1+1个点
-			return find(Arrays.copyOfRange(nums1, m1 + 1, nums1.length) , nums2, k - m1 -1);
+			return find(Arrays.copyOfRange(nums1, m1 + 1, nums1.length) , nums2, m2);
 		}else{//删除0-m2这m2+1个点
-			return find(nums1 , Arrays.copyOfRange(nums2, m2 + 1, nums2.length), k - m2 -1);
+			return find(nums1 , Arrays.copyOfRange(nums2, m2 + 1, nums2.length), m1);
 		}
 	}
 	public static void main(String[] args) {

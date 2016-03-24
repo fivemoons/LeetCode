@@ -55,9 +55,9 @@ public class Q5_LongestPalindromicSubstring {
 		
 		//len3
 		for(int l = 3; l<=s.length(); l++)//回文长度
-			for(int i = 0; i<=s.length()-l; i++){//起始点
+			for(int i = 0; i<s.length(); i++){//起始点
 				int j = i + l -1;//结尾点
-				if ((s.charAt(i) == s.charAt(j)) && (p[i+1][j-1] == true)){
+				if ((s.charAt(i) == s.charAt(j)) && (p[i+1][j-1])){
 					p[i][j] = true;//设为子串
 					if (anscount < l){
 						anscount = l;
