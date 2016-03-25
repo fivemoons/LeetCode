@@ -13,7 +13,7 @@ public class Q8_StringToInteger {
 		} else if (str.charAt(0) == '+') {//正号
 			i++;
 		}
-		double ans = 0;//默认返回值
+		long ans = 0;//默认返回值
 		while ((i < str.length()) && (str.charAt(i) >= '0') && (str.charAt(i) <= '9'))
 			ans = ans * 10 + (str.charAt(i++) - '0');//运行到错误停止
 		return (int) Math.min( Math.max(flag?ans:-ans , Integer.MIN_VALUE) , Integer.MAX_VALUE );
