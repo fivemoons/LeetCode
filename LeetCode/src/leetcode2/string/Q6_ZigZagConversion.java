@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode2.string;
 
 public class Q6_ZigZagConversion {
 	/*
