@@ -14,7 +14,6 @@ public class Q191_NumberOf1Bits {
 		while(n!=0){
 			ans++;
 			n = n & (n-1);
-			System.out.println(n);
 		}
 		return ans;
 	}

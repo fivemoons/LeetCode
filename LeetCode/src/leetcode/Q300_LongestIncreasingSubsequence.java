@@ -8,8 +8,7 @@ public class Q300_LongestIncreasingSubsequence {
 		if (nums == null || nums.length == 0) return 0;	
 		List<Integer> list = new ArrayList<Integer>();
 		
-		for(int i=0; i<nums.length; i++){
-			int x = nums[i]; //当前数字
+		for(int x : nums){
 			if(list.size() == 0 || list.get(list.size()-1) < x){//如果需要添加到队尾
 				list.add(x);
 			}else{ //二分查找
