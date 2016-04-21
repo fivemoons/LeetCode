@@ -2,7 +2,7 @@ package leetcode;
 
 import java.math.BigInteger;
 
-public class Q67_AddBinary { //BigIntege 很简单。。。
+public class Q67_AddBinary { //BigInteger 很简单。。。
     public static String addBinary(String a, String b) {
     		BigInteger biga = new BigInteger(a,2);
     		BigInteger bigb = new BigInteger(b,2);

@@ -1,6 +1,6 @@
 package leetcode;
 
-public class Q10_RegulaeExpression {
+public class Q10_RegularExpressionMatching {
 	public static boolean isMatch(String s, String p) {
 		if (p.length() == 0) //如果p串为空，只有s为空才可
 			return s.length() == 0;
