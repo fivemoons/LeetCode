@@ -20,8 +20,22 @@ public class Q78_Subsets {
 		dfs(ans,new LinkedList<Integer>(),nums,0); //注意新申请一个用于动态存放当前迭代
         return ans;
     }
+    public static List<List<Integer>> subsets2(int[] nums){
+    	Arrays.sort(nums);
+    	List<List<Integer>> ans = new LinkedList<List<Integer>>();
+    	List<Integer> cur = null;
+    	for(int i=0; i<(1<<nums.length); i++){
+    		cur = new LinkedList<Integer>();
+    		for(int j=0; j<nums.length; j++){
+    			if((i & (1 << j)) != 0 )
+    				cur.add(nums[j]);
+    		}
+    		ans.add(cur);
+    	}
+    	return ans;
+    }
 	public static void main(String[] args) {
-		List<List<Integer>> ans = subsets(new int[]{1,2,2});
+		List<List<Integer>> ans = subsets2(new int[]{1,2,2});
 		for(List<Integer> li:ans){
 			for(Integer i:li){
 				System.out.print(i+"_");

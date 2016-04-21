@@ -1,16 +1,16 @@
 package leetcode;
 
 public class Q137_SingleNumberII {
-    public static int singleNumber(int[] nums) {
+    public static int singleNumber(int[] nums) { //自己模拟三进制运算
         int[] w = new int[Integer.SIZE];
         for(int i=0; i<nums.length; i++){
-        		for(int j = 0; j < Integer.SIZE; j++){
-        			w[j] = (w[j] + ((nums[i] >> j) & 1)) % 3;
-        		}
+        	for(int j = 0; j < Integer.SIZE; j++){
+        		w[j] = (w[j] + ((nums[i] >> j) & 1)) % 3;
+        	}
         }
         int ans = 0;
         for(int i=0; i<Integer.SIZE; i++)
-        		ans += w[i] << i;
+        	ans += w[i] << i;
         return ans;
     }
     public static int singleNumber2(int[] nums){
