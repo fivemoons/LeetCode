@@ -7,8 +7,7 @@ public class Q206_ReverseLinkedList {
 		ListNode(int x) { val = x; }
 	}
     public static ListNode reverseList(ListNode head) { //递归版
-        if (head == null) return null;
-        if (head.next == null) return head;
+        if (head == null || head.next == null) return head;
         
         ListNode l1 = head.next; //head的next
         ListNode ans = reverseList(l1); //head的next转换
@@ -17,8 +16,7 @@ public class Q206_ReverseLinkedList {
         return ans;
     }
     public static ListNode reverselList2(ListNode head){ //非递归版
-    		if (head == null) return null;
-        if (head.next == null) return head;
+    	if (head == null || head.next == null) return head;
         
         ListNode t0 = null; //虚拟节点
         ListNode t1 = head;
