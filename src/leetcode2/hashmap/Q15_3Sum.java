@@ -1,37 +1,61 @@
 package leetcode2.hashmap;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 public class Q15_3Sum {
-	public static List<List<Integer>> threeSum(int[] nums) {//n2
-		//1 排序
+	public static List<List<Integer>> threeSum(int[] nums) { //n2 枚举两个 hashmap找第三个
 		Arrays.sort(nums);
-		//2 构造hashmap
-		Map<Integer, Integer> map = new HashMap<>();//存储每个点下标
+		Map<Integer, Integer> map = new HashMap<>();
 		for (int i = 0; i < nums.length; i++) {
-			map.put(nums[i], i);//多个值存在的话 保留最后一个
+			map.put(nums[i], i);
 		}
-		//3 寻找答案
-		List<List<Integer>> ans = new ArrayList<>();
+		List<List<Integer>> ans = new LinkedList<>();
 		for (int b = 0; b < nums.length; b++) {
-			if ((b != 0) && (nums[b] == nums[b - 1]))//去重
+			if ((b != 0) && (nums[b] == nums[b - 1]))
 				continue;
 			for (int m = b + 1; m < nums.length; m++) {
-				if ((m != b + 1) && (nums[m] == nums[m - 1]))//去重
+				if ((m != b + 1) && (nums[m] == nums[m - 1]))
 					continue;
-				int e = 0 - nums[b] - nums[m];//要找的值
-				if (map.get(e) != null && map.get(e) > m) {//确定找到
-					ans.add(Arrays.asList(new Integer[] { nums[b], nums[m], e }));//添加
+				int e = 0 - nums[b] - nums[m];
+				if (map.get(e) != null && map.get(e) > m) {
+					ans.add(Arrays.asList(new Integer[] { nums[b], nums[m], e }));
 				}
 			}
 		}
 		return ans;
 	}
 
+	public List<List<Integer>> threeSum2(int[] nums) { //n2 枚举第一个 首尾指针找后两个
+        Arrays.sort(nums);
+        List<List<Integer>> ans = new LinkedList<List<Integer>>();
+        for(int i=0; i<nums.length; i++){
+            if((i>0) && (nums[i-1] == nums[i])){
+                continue;
+            }
+            int l = i+1, r = nums.length - 1, sum = 0 - nums[i];
+            while(l < r){
+                if(nums[l] + nums[r] == sum){
+                    ans.add(Arrays.asList(nums[i], nums[l], nums[r]));
+                    l++;
+                    while((l < r) && (nums[l] == nums[l-1])) l++;
+                    r--;
+                    while((l < r) && (nums[r] == nums[r+1])) r--;
+                }else if(nums[l] + nums[r] < sum){
+                    l++;
+                    while((l < r) && (nums[l] == nums[l-1])) l++;
+                }else{
+                    r--;
+                    while((l < r) && (nums[r] == nums[r+1])) r--;
+                }
+            }
+        }
+        return ans;
+    }
+	
 	public static void main(String[] args) {
 		// -4_-1_-1_0_1_2_
 		//System.out.println(threeSum(new int[] {-4,-1,-1,0,1,2}));
